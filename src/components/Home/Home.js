@@ -18,7 +18,7 @@ const Home = () => {
     }, [])
     return (
         <div>
-            <h1 className='text-center italic hover:not-italic text-secondary my-4 text-5xl font-bold'>BRAND NEW PARTS</h1>
+            <h1 className='text-center italic hover:not-italic text-secondary my-4 text-5xl font-bold'>CAR MANUFACTURING</h1>
             <Banner></Banner>
             <h1 className='text-center text-primary my-8 text-3xl font-bold'>PARTS PRODUCT</h1>
             <div className='grid lg:grid-cols-3 grid-cols-1 gap-8 px-12'>
@@ -42,7 +42,7 @@ const Home = () => {
                     <TopBrands></TopBrands>
                 </div>
             </div>
-            <div className='my-12'>
+            <div className='my-16'>
                 <h1 className='text-center text-primary my-12 text-3xl font-bold'>MORE SHOP</h1>
                 <div className='px-12 '>
                     <MoreShop></MoreShop>

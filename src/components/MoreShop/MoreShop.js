@@ -12,7 +12,7 @@ const MoreShop = () => {
                     <div class="max-w-md">
                         <h1 class="mb-5 text-5xl text-white font-bold">CUSTOM BODY KITS</h1>
                         <p class="mb-5 text-white">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                        <button class="btn btn-warning bg-red-700 text-white">Get Started</button>
+                        <button class="btn btn-warning bg-red-700 text-white">SHOP NOW</button>
                     </div>
                 </div>
             </div>
@@ -24,7 +24,7 @@ const MoreShop = () => {
                         <h1 class="mb-5 text-5xl text-white font-bold">
                             CUSTOM WHEELS</h1>
                         <p class="mb-5 text-white">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                        <button class="btn btn-warning bg-red-700 text-white">Get Started</button>
+                        <button class="btn btn-warning bg-red-700 text-white">SHOP NOW</button>
                     </div>
                 </div>
             </div>
@@ -36,7 +36,7 @@ const MoreShop = () => {
                         <h1 class="mb-5 text-5xl text-white font-bold">
                             EXHAUTS SYSTEMS</h1>
                         <p class="mb-5 text-white">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                        <button class="btn btn-warning bg-red-700 text-white">Get Started</button>
+                        <button class="btn btn-warning bg-red-700 text-white">SHOP NOW</button>
                     </div>
                 </div>
             </div>
