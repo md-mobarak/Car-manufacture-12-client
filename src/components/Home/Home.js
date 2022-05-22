@@ -26,8 +26,10 @@ const Home = () => {
                     partsProduct.map(product => <PartsCar product={product}></PartsCar>)
                 }
             </div>
-            <div>
-                <h1 className='text-center text-info my-12 text-3xl font-bold'>CLIENT TRUST US</h1>
+            <div className='px-12 my-24'>
+                <h1 className='text-center text-info mt-12 text-3xl font-bold'>CLIENT TRUST US</h1>
+                <p className='text-center text-primary text-xl'>TYR TO UNDERSTAND USERS EXPECTATION</p>
+                <div class="divider">OR</div>
                 <BusinessSummary></BusinessSummary>
             </div>
             <div>
@@ -40,9 +42,9 @@ const Home = () => {
                     <TopBrands></TopBrands>
                 </div>
             </div>
-            <div>
+            <div className='my-12'>
                 <h1 className='text-center text-primary my-12 text-3xl font-bold'>MORE SHOP</h1>
-                <div className='px-12'>
+                <div className='px-12 '>
                     <MoreShop></MoreShop>
                 </div>
             </div>
