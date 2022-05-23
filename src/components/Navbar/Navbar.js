@@ -1,7 +1,14 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { NavLink } from 'react-router-dom';
+import auth from '../../firebase.init';
 
 const Navbar = ({ children }) => {
+    const logout = () => {
+        signOut(auth);
+    };
+    const [user, loading, error] = useAuthState(auth);
     return (
         <div>
             <div class="drawer drawer-end ">
@@ -21,9 +28,16 @@ const Navbar = ({ children }) => {
                         <div class="flex-none hidden lg:block">
                             <ul class="menu menu-horizontal">
                                 {/* <!-- Navbar menu content here --> */}
-                                <NavLink className='mx-4 rounded-lg text-white' to='/blog'>Blog</NavLink>
-                                <NavLink className='mx-4 text-white rounded-lg' to='/dashboard'>Dashboard</NavLink>
-                                <NavLink className='mx-4 text-white rounded-lg ' to='/login'>Login</NavLink>
+                                <NavLink className='mx-4 mt-3 rounded-lg text-white' to='/blog'>Blog</NavLink>
+                                {
+                                    user &&
+                                    <NavLink className='mx-4 mt-3 text-white rounded-lg' to='/dashboard'>Dashboard</NavLink>
+                                }
+                                {user ?
+                                    <NavLink onClick={logout} className='mx-4 py-3  bg-primary text-white rounded-lg ' to='/'>LogOut</NavLink>
+                                    :
+                                    <NavLink className='mx-4 py-3  bg-primary text-white rounded-lg ' to='/login'>Login</NavLink>
+                                }
 
                             </ul>
                         </div>
@@ -37,7 +51,11 @@ const Navbar = ({ children }) => {
                         {/* <!-- Sidebar content here --> */}
                         <NavLink className='mx-4 py-3 mt-4 bg-primary rounded-lg text-white' to='/blog'>Blog</NavLink>
                         <NavLink className='mx-4 py-3 mt-4 bg-primary text-white rounded-lg' to='/dashboard'>Dashboard</NavLink>
-                        <NavLink className='mx-4 py-3 mt-4 bg-primary text-white rounded-lg ' to='/login'>Login</NavLink>
+                        {user ?
+                            <NavLink onClick={logout} className='mx-4 mt-4 py-3  bg-primary text-white rounded-lg ' to='/'>LogOut</NavLink>
+                            :
+                            <NavLink className='mx-4 py-3 mt-4 bg-primary text-white rounded-lg ' to='/login'>Login</NavLink>
+                        }
 
                     </ul>
 

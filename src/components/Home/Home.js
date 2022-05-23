@@ -8,6 +8,7 @@ import TopBrands from '../TopBrands/TopBrands';
 import UserReviews from '../UserReviews/UserReviews';
 
 const Home = () => {
+
     const [partsProduct, setPartsProduct] = useState([])
     useEffect(() => {
         fetch('product.json')
@@ -20,7 +21,7 @@ const Home = () => {
         <div>
             <h1 className='text-center italic hover:not-italic text-secondary my-4 text-5xl font-bold'>CAR MANUFACTURING</h1>
             <Banner></Banner>
-            <h1 className='text-center text-primary my-8 text-3xl font-bold'>PARTS PRODUCT</h1>
+            <h1 className='text-center text-primary my-8 text-3xl font-bold'> PRODUCTS</h1>
             <div className='grid lg:grid-cols-3 grid-cols-1 gap-8 px-12'>
                 {
                     partsProduct.map(product => <PartsCar product={product}></PartsCar>)
