@@ -9,6 +9,12 @@ import Login from './components/Login/Login';
 import SignUp from './components/Login/SignUp';
 import RequireAuth from './components/RequireAuth/RequireAuth';
 import Dashboard from './components/Dashboard/Dashboard';
+import ProductDetail from './components/ProductDetail/ProductDetail';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import MyOrders from './components/Dashboard/MyOrders';
+import AddReview from './components/Dashboard/AddReview';
+import MyProfile from './components/Dashboard/MyProfile';
 // ..
 
 function App() {
@@ -20,11 +26,21 @@ function App() {
           <Route path='/' element={<Home></Home>}></Route>
           <Route path='/login' element={<Login></Login>}></Route>
           <Route path='/signup' element={<SignUp></SignUp>}></Route>
-          <Route path='dashboard' element={<RequireAuth>
+          <Route path='/dashboard' element={<RequireAuth>
             <Dashboard></Dashboard>
-          </RequireAuth>}></Route>
+          </RequireAuth>}>
+            <Route index element={<MyOrders></MyOrders>}></Route>
+            <Route path='addReview' element={<AddReview></AddReview>}></Route>
+            <Route path='myProfile' element={<MyProfile></MyProfile>}></Route>
+          </Route>
+          <Route path='/product/:productId' element={<RequireAuth>
+            <ProductDetail></ProductDetail>
+          </RequireAuth>}>
+          </Route>
+
         </Routes>
       </Navbar>
+      <ToastContainer />
     </div>
   );
 }

@@ -1,24 +1,38 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import useToken from '../../hooks/useToken';
 
 const SignUp = () => {
+    const navigate = useNavigate()
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
     const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
+
+    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+    const [token] = useToken(user || gUser)
+    // console.log(token);
+
     const onSubmit = data => {
         createUserWithEmailAndPassword(data.email, data.password)
         console.log(data)
         reset()
     };
 
-    const navigate = useNavigate()
+
+    const handleGoogle = () => {
+        signInWithGoogle()
+    }
+    if (token) {
+        return navigate('/')
+    }
     return (
         <div>
 
@@ -26,8 +40,9 @@ const SignUp = () => {
 
 
                 <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                    <form onSubmit={handleSubmit(onSubmit)}>
-                        <div class="card-body">
+
+                    <div class="card-body">
+                        <form onSubmit={handleSubmit(onSubmit)}>
                             <div class="form-control">
                                 <label class="label">
                                     <span class="label-text">Name</span>
@@ -70,8 +85,13 @@ const SignUp = () => {
 
                                 <input className='btn btn-primary' type="submit" value="SignIn" />
                             </div>
+                        </form>
+                        <div class="form-control mt-6">
+
+                            <input onClick={handleGoogle} className='btn btn-success font-bold' type="submit" value="Google SignIn" />
                         </div>
-                    </form>
+                    </div>
+
                 </div>
             </div>
 

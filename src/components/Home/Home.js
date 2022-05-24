@@ -10,8 +10,9 @@ import UserReviews from '../UserReviews/UserReviews';
 const Home = () => {
 
     const [partsProduct, setPartsProduct] = useState([])
+    // console.log(partsProduct);
     useEffect(() => {
-        fetch('product.json')
+        fetch('http://localhost:5000/product')
             .then(res => res.json())
             .then(data => {
                 setPartsProduct(data);
@@ -24,8 +25,9 @@ const Home = () => {
             <h1 className='text-center text-primary my-8 text-3xl font-bold'> PRODUCTS</h1>
             <div className='grid lg:grid-cols-3 grid-cols-1 gap-8 px-12'>
                 {
-                    partsProduct.map(product => <PartsCar product={product}></PartsCar>)
+                    partsProduct.map(product => <PartsCar key={product._id} product={product}></PartsCar>)
                 }
+
             </div>
             <div className='px-12 my-24'>
                 <h1 className='text-center text-info mt-12 text-3xl font-bold'>CLIENT TRUST US</h1>
