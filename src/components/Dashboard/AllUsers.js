@@ -1,8 +1,9 @@
 import React from 'react';
 import { useQuery } from 'react-query';
+import Users from './Users';
 
 const AllUsers = () => {
-    const { isLoading, error, data } = useQuery('user', () =>
+    const { isLoading, error, data, refetch } = useQuery('user', () =>
         fetch('http://localhost:5000/user', {
             method: 'GET',
             headers: {
@@ -16,20 +17,7 @@ const AllUsers = () => {
     if (isLoading) {
         return <p>Loading....</p>
     }
-    const email = data[1].email
 
-    const makeAdmin = () => {
-        fetch(`http://localhost:5000/user/admin/${email}`, {
-            method: 'PUT',
-            headers: {
-                authorization: `Bearer ${localStorage.getItem('accessToken')}`
-            },
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-            })
-    }
 
     return (
         <div>
@@ -45,12 +33,13 @@ const AllUsers = () => {
                     </thead>
                     <tbody>
                         {
-                            data.map((a, index) => <tr class="hover">
-                                <th>{index + 1}</th>
-                                <td>{ }</td>
-                                <td>{a.email}</td>
-                                <td><button onClick={makeAdmin} class="btn btn-primary btn-xs">Make Admin</button></td>
-                            </tr>)
+                            data.map((user, index) => <Users
+                                index={index}
+                                user={user}
+                                refetch={refetch}
+                                key={user._id}
+                            >
+                            </Users>)
                         }
 
                     </tbody>

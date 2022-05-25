@@ -16,6 +16,7 @@ import MyOrders from './components/Dashboard/MyOrders';
 import AddReview from './components/Dashboard/AddReview';
 import MyProfile from './components/Dashboard/MyProfile';
 import AllUsers from './components/Dashboard/AllUsers';
+import RequireAdmin from './components/RequireAuth/RequireAdmin';
 // ..
 
 function App() {
@@ -33,7 +34,7 @@ function App() {
             <Route index element={<MyOrders></MyOrders>}></Route>
             <Route path='addReview' element={<AddReview></AddReview>}></Route>
             <Route path='myProfile' element={<MyProfile></MyProfile>}></Route>
-            <Route path='allUsers' element={<AllUsers></AllUsers>}></Route>
+            <Route path='allUsers' element={<RequireAdmin><AllUsers></AllUsers></RequireAdmin>}></Route>
           </Route>
 
           <Route path='/product/:productId' element={<RequireAuth>
