@@ -1,5 +1,6 @@
 import React from 'react';
 import { useQuery } from 'react-query';
+import MyProfile from './MyProfile';
 import Users from './Users';
 
 const AllUsers = () => {
@@ -38,8 +39,10 @@ const AllUsers = () => {
                                 user={user}
                                 refetch={refetch}
                                 key={user._id}
+                                id={user._id}
                             >
-                            </Users>)
+                            </Users>
+                            )
                         }
 
                     </tbody>

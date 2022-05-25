@@ -1,8 +1,8 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 
-const Users = ({ user, index, refetch }) => {
-    console.log(user);
+const Users = ({ user, index, refetch, id }) => {
+    // console.log(id);
     const { email, role } = user
     const makeAdmin = () => {
         fetch(`http://localhost:5000/user/admin/${email}`, {

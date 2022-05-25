@@ -56,9 +56,7 @@ const MyOrders = () => {
                             orders.map((order, index) => <Orders
                                 order={order}
                                 index={index}
-
                             >
-
                             </Orders>)
                         }
 

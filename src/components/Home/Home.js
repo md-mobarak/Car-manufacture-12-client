@@ -10,6 +10,7 @@ import UserReviews from '../UserReviews/UserReviews';
 const Home = () => {
 
     const [partsProduct, setPartsProduct] = useState([])
+    const sliceProduct = partsProduct.slice(0, 6)
     // console.log(partsProduct);
     useEffect(() => {
         fetch('http://localhost:5000/product')
@@ -25,7 +26,7 @@ const Home = () => {
             <h1 className='text-center text-primary my-8 text-3xl font-bold'> PRODUCTS</h1>
             <div className='grid lg:grid-cols-3 grid-cols-1 gap-8 px-12'>
                 {
-                    partsProduct.map(product => <PartsCar key={product._id} product={product}></PartsCar>)
+                    sliceProduct.map(product => <PartsCar key={product._id} product={product}></PartsCar>)
                 }
 
             </div>
