@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import Products from './Products';
+import ManageOrder from './ManageOrder';
+
 
 const ManageAllProduct = () => {
     const [allOrders, setAllProducts] = useState([])
-    console.log(allOrders);
+    // console.log(allOrders);
     useEffect(() => {
         fetch('http://localhost:5000/allOrders')
             .then(res => res.json())
@@ -16,15 +17,15 @@ const ManageAllProduct = () => {
     }
     return (
         <div>
-            {/* <h1 className='text-4xl text-primary my-8 font-bold text-center'>Manage All Products</h1>
+            <h1 className='text-4xl text-primary my-8 font-bold text-center'>Manage All Orders</h1>
             <div className='grid lg:grid-cols-2 grid-cols-1 mb-12 gap-8 px-12'>
-                {
-                    allProducts.map(p => <Products
-                        product={p}
-                    ></Products>)
-                }
 
-            </div> */}
+                {
+                    allOrders.map(order => <ManageOrder order={order}
+                        key={order._id}
+                    ></ManageOrder>)
+                }
+            </div>
         </div>
     );
 };

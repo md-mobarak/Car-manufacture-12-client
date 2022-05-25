@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Products = ({ product }) => {
-
-    const { name, img, price, availableQuantity, orderQuantity, description } = product
+const ManageOrder = ({ order }) => {
+    console.log(order);
+    const { img, email, name, orderQuantity, price, address, number } = order
     return (
         <div className='shadow-xl'>
             <div class="card w-96 bg-base-300 shadow-xl">
@@ -12,9 +12,10 @@ const Products = ({ product }) => {
                 <div class="card-body items-center text-center">
                     <h2 class="card-title">{name}</h2>
                     <h2 class="card-title">Price:{price}</h2>
-                    <p>AvailableQuantity:{availableQuantity}</p>
+                    <p>Phone: {number}</p>
+                    <p>Email: {email}</p>
                     <p>OrderQuantity: {orderQuantity}</p>
-                    <p title={description}>{description.slice(0, 60) + "..."}</p>
+                    <p>Location: {address}</p>
                     <div class="card-actions">
                         <button class="btn btn-primary">Delete</button>
                     </div>
@@ -24,4 +25,4 @@ const Products = ({ product }) => {
     );
 };
 
-export default Products;
+export default ManageOrder;
