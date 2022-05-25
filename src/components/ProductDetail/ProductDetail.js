@@ -25,10 +25,6 @@ const ProductDetail = () => {
         const xQuantity = pdDetail.orderQuantity
         const orderQuantity = xQuantity - 1
         const updateInfo = { orderQuantity }
-        // if (updateInfo < 1000) {
-        //     return alert('Product Quantity is empty')
-        // }
-
         const url = `http://localhost:5000/product/${productId}`
         fetch(url, {
             method: 'PUT',
@@ -91,6 +87,7 @@ const ProductDetail = () => {
                 }
             })
         reset()
+
     }
 
 

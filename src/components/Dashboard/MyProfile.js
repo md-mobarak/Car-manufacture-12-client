@@ -11,7 +11,7 @@ const MyProfile = () => {
                     <span class="label-text"> Your Name</span>
 
                 </label>
-                <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" value={user.name ? user.name : 'your name block'} />
+                <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" value={user.displayName ? user.displayName : 'your name block'} />
                 <label class="label">
                     <span class="label-text"> Your Email</span>
 

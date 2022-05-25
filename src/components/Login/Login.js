@@ -8,10 +8,6 @@ import useToken from '../../hooks/useToken';
 
 
 const Login = () => {
-
-    let location = useLocation();
-    let from = location.state?.from?.pathname || "/";
-    const navigate = useNavigate()
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const [
         signInWithEmailAndPassword,
@@ -20,8 +16,11 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
     const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
-    const token = useToken(user || gUser)
 
+    const token = useToken(user || gUser)
+    let location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+    const navigate = useNavigate()
     const onSubmit = data => {
         console.log(data)
         signInWithEmailAndPassword(data.email, data.password)
@@ -35,10 +34,9 @@ const Login = () => {
         return <button className='btn btn-loading'>Loading...</button>
     }
 
-    if (error) {
-        return <p>Error{error.message}</p>
-    }
-
+    // if (error) {
+    //     return <p>Error{error.message}</p>
+    // }
 
     if (user || gUser) {
         return navigate(from, { replace: true });
@@ -82,6 +80,7 @@ const Login = () => {
                             <div>
                                 <p>New To Car?<button onClick={() => navigate('/signup')} class="btn btn-link">Please Register</button></p>
                             </div>
+                            <p className='text-red-700'>{error ? error.message : ''}</p>
                             <div class="form-control mt-6">
 
                                 <input className='btn btn-primary' type="submit" value="Login" />
@@ -91,6 +90,7 @@ const Login = () => {
 
                             <input onClick={handleGoogle} className='btn btn-success font-bold' type="submit" value="Google SignIn" />
                         </div>
+                        <p className='text-red-700'>{gError ? gError.message : ''}</p>
                     </div>
 
                 </div>
