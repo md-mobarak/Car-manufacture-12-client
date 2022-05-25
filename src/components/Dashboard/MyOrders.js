@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Orders from './Orders';
 
 const MyOrders = () => {
     const navigate = useNavigate()
@@ -17,7 +18,7 @@ const MyOrders = () => {
                 }
             })
                 .then(res => {
-                    console.log(res);
+                    // console.log(res);
                     if (res.status === 401 || res.status === 403) {
                         signOut(auth);
                         navigate('/')
@@ -29,7 +30,8 @@ const MyOrders = () => {
                     setOrders(data)
                 })
         }
-    }, [user])
+    }, [user, orders])
+
 
     return (
         <div>
@@ -43,23 +45,21 @@ const MyOrders = () => {
                             <th>Product Image</th>
                             <th>Product Name</th>
                             <th>Email</th>
+                            <th>Quantity</th>
                             <th>Price</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
 
                         {
-                            orders.map((a, index) => <tr className="hover">
-                                <th>{index + 1}</th>
-                                <td><div class="avatar">
-                                    <div class="w-24 rounded-full">
-                                        <img src={a.img} alt='' />
-                                    </div>
-                                </div></td>
-                                <td>{a.name}</td>
-                                <td>{a.email}</td>
-                                <td>{a.price}</td>
-                            </tr>)
+                            orders.map((order, index) => <Orders
+                                order={order}
+                                index={index}
+
+                            >
+
+                            </Orders>)
                         }
 
                     </tbody>
