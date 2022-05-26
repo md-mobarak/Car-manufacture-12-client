@@ -27,7 +27,7 @@ const PersonalInfo = () => {
                         <p className='text-white'>Location: {userData?.location}</p>
                         <p className='text-white'>Linkdin: {userData?.linkdin}</p>
                         <div class="card-actions justify-end">
-                            <button class="btn">Buy Now</button>
+                            <button disabled class="btn btn-secondary text-secondary">Buy Now</button>
                         </div>
                     </div>
                 </div>

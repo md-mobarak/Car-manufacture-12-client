@@ -30,7 +30,7 @@ const Dashboard = () => {
                         <li><Link to='/dashboard/myProfile'>My Profile</Link></li>
                         {
                             admin &&
-                            <li><Link to='/dashboard/allUsers'>All Users</Link></li>
+                            <li><Link to='/dashboard/allUsers'>Make Admin</Link></li>
                         }
                         {
                             admin &&
