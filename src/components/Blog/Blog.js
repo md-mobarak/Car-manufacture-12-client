@@ -33,7 +33,10 @@ const Blog = () => {
                 <p className='text-xl text-justify mt-3'>Unit testing is a type of software testing where individual units or software components are tested. Its purpose is to validate that each unit of code performs as expected. A unit can be anything you want it to be — a line of code, a method, or a class.Unit tests save time and money. Usually, we tend to test the happy path more than the unhappy path. If you release such an app without thorough testing, you would have to keep fixing issues raised by your potential users. The time to fix these issues could’ve been used to build new features or optimize the existing system. Bear in mind that fixing bugs without running tests could also introduce new bugs into the system.</p>
             </div>
             <div>
-                <h1 className='mt-4 text-5xl text-center text-primary'>You have an array of products. Each product has a name, price, description, etc. How will you implement a search to find products by name?</h1>
+                <h1 className='mt-4 text-5xl text-center text-primary'> Why you do not set the state directly in React. For example, if you have const [products, setProducts] = useState([]). Why you do not set products = [...] instead, you use the setProducts</h1>
+
+                <p className='text-xl text-justify mt-3'>The JavaScript spread operator (...) allows us to quickly copy all or part of an existing array or object into another array or object.
+                    The spread operator is often used in combination with destructuring.State can be updated in response to event handlers, server responses, or prop changes. This is done using the setState() method. The setState() method enqueues all of the updates made to the component state and instructs React to re-render the component and its children with the updated state.</p>
             </div>
         </div>
     );
