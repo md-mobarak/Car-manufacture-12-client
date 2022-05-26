@@ -19,6 +19,7 @@ const Navbar = ({ children }) => {
                     <div class="w-full navbar px-12 bg-primary">
                         <div class="flex-1 px-2 mx-2">
                             <NavLink className='text-white' to='/'>Home</NavLink>
+                            <NavLink className='text-white px-4' to='/MyPortfolio'>My Portfolio</NavLink>
                         </div>
                         <div class="flex-none lg:hidden">
                             <label for="my-drawer-3" class="btn btn-square btn-ghost">

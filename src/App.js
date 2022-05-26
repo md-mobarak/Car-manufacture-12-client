@@ -20,6 +20,9 @@ import RequireAdmin from './components/RequireAuth/RequireAdmin';
 import ManageAllProduct from './components/Dashboard/ManageAllProduct';
 import AddProduct from './components/Dashboard/AddProduct';
 import ManageProduct from './components/Dashboard/ManageProduct';
+import Payment from './components/Dashboard/Payment';
+import MyPortfolio from './components/MyPortfolio/MyPortfolio';
+import Blog from './components/Blog/Blog';
 // ..
 
 function App() {
@@ -30,13 +33,16 @@ function App() {
         <Routes>
           <Route path='/' element={<Home></Home>}></Route>
           <Route path='/login' element={<Login></Login>}></Route>
+          <Route path='/MyPortfolio' element={<MyPortfolio></MyPortfolio>}></Route>
           <Route path='/signup' element={<SignUp></SignUp>}></Route>
+          <Route path='/blog' element={<Blog></Blog>}></Route>
           <Route path='/dashboard' element={<RequireAuth>
             <Dashboard></Dashboard>
           </RequireAuth>}>
             <Route index element={<MyOrders></MyOrders>}></Route>
             <Route path='addReview' element={<AddReview></AddReview>}></Route>
             <Route path='myProfile' element={<MyProfile></MyProfile>}></Route>
+            <Route path='payment/:id' element={<Payment></Payment>}></Route>
             <Route path='allUsers' element={<RequireAdmin><AllUsers></AllUsers></RequireAdmin>}></Route>
             <Route path='manageAllOrders' element={<RequireAdmin><ManageAllProduct></ManageAllProduct></RequireAdmin>}></Route>
 

@@ -13,7 +13,7 @@ const ManageAllProduct = () => {
             })
     }, [allOrders])
     if (!allOrders) {
-        <button className='btn btn-loading'>Loading...</button>
+        return <button className='btn btn-loading'>Loading...</button>
     }
     return (
         <div>

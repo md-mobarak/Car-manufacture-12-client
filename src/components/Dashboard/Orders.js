@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Orders = ({ order, index, }) => {
-    const { name, img, price, orderQuantity, email, _id } = order
+    const { name, img, price, orderQuantity, email, _id, paid } = order
     const handleDelete = () => {
         const proceed = window.confirm("Are You Sure?")
         if (proceed) {
@@ -28,8 +29,15 @@ const Orders = ({ order, index, }) => {
             <td>{email}</td>
             <td>{price}</td>
             <td>{orderQuantity}</td>
+
             <td>
                 <button onClick={handleDelete} class="btn btn-primary btn-xs">Delete Order</button>
+            </td>
+            <td>
+                {(price && !paid) && <Link to={`/dashboard/payment/${_id}`}><button class="btn btn-primary btn-xs">Payment</button></Link>}
+            </td>
+            <td>
+                {(price && paid) && <span className='text-primary'>paid</span>}
             </td>
         </tr>
     );

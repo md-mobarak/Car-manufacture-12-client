@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const AddReview = () => {
@@ -15,6 +16,9 @@ const AddReview = () => {
         }
         const res = await axios.post('http://localhost:5000/review', reviewData)
         console.log(res);
+        if (res.request.status === 200) {
+            toast.success('Thank You My Dear Customer')
+        }
         reset()
     };
     return (
@@ -22,7 +26,7 @@ const AddReview = () => {
             <form className='card-body bg-base-300' onSubmit={handleSubmit(onSubmit)}>
                 <div class="card w-96 bg-primary text-dark-content">
                     <div class="card-body">
-                        <h2 class="card-title text-white">Card title!</h2>
+                        <h2 class="card-title text-white">ADD REVIEW</h2>
                         <textarea
                             class="textarea "
                             {...register("description", { required: true })}
@@ -31,7 +35,7 @@ const AddReview = () => {
                         <input type="number"
                             name='rating'
                             placeholder="Type here"
-                            {...register("rating", { required: true })}
+                            {...register("rating", { min: 0, max: 5, required: true })}
                             class="input input-bordered w-full max-w-xs" />
 
                         <div class="card-actions justify-center">

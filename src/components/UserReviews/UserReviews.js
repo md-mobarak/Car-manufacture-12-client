@@ -6,7 +6,9 @@ const UserReviews = () => {
     useEffect(() => {
         fetch('http://localhost:5000/review')
             .then(res => res.json())
-            .then(data => setReviews(data))
+            .then(data => {
+                setReviews(data)
+            })
     }, [reviews])
     return (
         <div className='px-24'>
