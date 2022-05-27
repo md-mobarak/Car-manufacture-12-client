@@ -23,6 +23,7 @@ import ManageProduct from './components/Dashboard/ManageProduct';
 import Payment from './components/Dashboard/Payment';
 import MyPortfolio from './components/MyPortfolio/MyPortfolio';
 import Blog from './components/Blog/Blog';
+import NotFound from './components/NotFound/NotFound';
 // ..
 
 function App() {
@@ -54,7 +55,7 @@ function App() {
             <ProductDetail></ProductDetail>
           </RequireAuth>}>
           </Route>
-
+          <Route path='*' element={<NotFound></NotFound>}></Route>
         </Routes>
       </Navbar>
       <ToastContainer />

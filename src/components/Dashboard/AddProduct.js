@@ -12,7 +12,7 @@ const AddProduct = () => {
             ...data,
             img: imageURL,
         }
-        const res = await axios.post('http://localhost:5000/addProduct', serviceData)
+        const res = await axios.post('https://whispering-lowlands-83696.herokuapp.com/addProduct', serviceData)
         console.log(res);
         reset()
         setImageURL("")

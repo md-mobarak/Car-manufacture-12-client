@@ -5,7 +5,7 @@ const SingleProduct = ({ product }) => {
     const handleDelete = () => {
         const proceed = window.confirm("Are You Sure?")
         if (proceed) {
-            fetch(`http://localhost:5000/manageProduct/${_id}`, {
+            fetch(`https://whispering-lowlands-83696.herokuapp.com/manageProduct/${_id}`, {
                 method: 'DELETE',
             })
                 .then(res => res.json())

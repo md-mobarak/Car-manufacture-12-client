@@ -1,8 +1,8 @@
-# Getting Started with Create React App
+# [Live site Link](https://car-parts-assignment-12.web.app/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ [site](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Usages Thecnology
 
 In the project directory, you can run:
 

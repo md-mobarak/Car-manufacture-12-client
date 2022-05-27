@@ -15,7 +15,7 @@ const MyProfile = () => {
         const currentUser = { linkdin, location, phone, name }
         console.log(currentUser);
         if (email) {
-            fetch(`http://localhost:5000/profile/${email}`, {
+            fetch(`https://whispering-lowlands-83696.herokuapp.com/profile/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

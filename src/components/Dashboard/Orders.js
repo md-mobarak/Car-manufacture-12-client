@@ -6,7 +6,7 @@ const Orders = ({ order, index, }) => {
     const handleDelete = () => {
         const proceed = window.confirm("Are You Sure?")
         if (proceed) {
-            fetch(`http://localhost:5000/order/${_id}`, {
+            fetch(`https://whispering-lowlands-83696.herokuapp.com/order/${_id}`, {
                 method: 'DELETE',
             })
                 .then(res => res.json())

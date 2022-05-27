@@ -7,10 +7,10 @@ const PersonalInfo = () => {
     const email = user.email
     const [userData, setUserData] = useState({})
     useEffect(() => {
-        fetch(`http://localhost:5000/profile/${email}`)
+        fetch(`https://whispering-lowlands-83696.herokuapp.com/profile/${email}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+
                 setUserData(data)
             })
     }, [userData])

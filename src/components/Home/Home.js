@@ -13,7 +13,7 @@ const Home = () => {
     const sliceProduct = partsProduct.slice(0, 6)
     // console.log(partsProduct);
     useEffect(() => {
-        fetch('http://localhost:5000/product')
+        fetch('https://whispering-lowlands-83696.herokuapp.com/product')
             .then(res => res.json())
             .then(data => {
                 setPartsProduct(data);
@@ -24,7 +24,7 @@ const Home = () => {
             <h1 className='text-center italic hover:not-italic text-secondary my-4 text-5xl font-bold'>CAR MANUFACTURING</h1>
             <Banner></Banner>
             <h1 className='text-center text-primary my-8 text-3xl font-bold'> PRODUCTS</h1>
-            <div className='grid lg:grid-cols-3 grid-cols-1 gap-8 px-12'>
+            <div className='grid lg:grid-cols-3 grid-cols-1 mx-8 gap-12 '>
                 {
                     sliceProduct.map(product => <PartsCar key={product._id} product={product}></PartsCar>)
                 }
@@ -36,7 +36,7 @@ const Home = () => {
                 <div class="divider">OR</div>
                 <BusinessSummary></BusinessSummary>
             </div>
-            <div>
+            <div className='gap-x-5 mx-8'>
                 <h1 className='text-center text-accent my-12 text-3xl font-bold'>USER REVIEWS</h1>
                 <UserReviews></UserReviews>
             </div>

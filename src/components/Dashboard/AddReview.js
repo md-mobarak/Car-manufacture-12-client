@@ -14,7 +14,7 @@ const AddReview = () => {
             ...data,
             email: user.email
         }
-        const res = await axios.post('http://localhost:5000/review', reviewData)
+        const res = await axios.post('https://whispering-lowlands-83696.herokuapp.com/review', reviewData)
         console.log(res);
         if (res.request.status === 200) {
             toast.success('Thank You My Dear Customer')

@@ -6,7 +6,7 @@ const ManageAllProduct = () => {
     const [allOrders, setAllProducts] = useState([])
     // console.log(allOrders);
     useEffect(() => {
-        fetch('http://localhost:5000/allOrders')
+        fetch('https://whispering-lowlands-83696.herokuapp.com/allOrders')
             .then(res => res.json())
             .then(data => {
                 setAllProducts(data);

@@ -11,7 +11,7 @@ const ProductDetail = () => {
     const { productId } = useParams()
     const [pdDetail, setpdDetail] = useState({})
     useEffect(() => {
-        fetch(`http://localhost:5000/product/${productId}`)
+        fetch(`https://whispering-lowlands-83696.herokuapp.com/product/${productId}`)
             .then(res => res.json())
             .then(data => {
                 setpdDetail(data)
@@ -25,7 +25,7 @@ const ProductDetail = () => {
         const xQuantity = pdDetail.orderQuantity
         const orderQuantity = xQuantity - 1
         const updateInfo = { orderQuantity }
-        const url = `http://localhost:5000/product/${productId}`
+        const url = `https://whispering-lowlands-83696.herokuapp.com/product/${productId}`
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -49,7 +49,7 @@ const ProductDetail = () => {
 
         const updateInfo = { orderQuantity };
 
-        const url = `http://localhost:5000/product/${productId}`
+        const url = `https://whispering-lowlands-83696.herokuapp.com/product/${productId}`
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -71,7 +71,7 @@ const ProductDetail = () => {
         const { img, name, price, orderQuantity } = pdDetail
         const allData = { img, name, price, orderQuantity, address, email, userName, number }
         console.log(allData);
-        const url = `http://localhost:5000/user`
+        const url = `https://whispering-lowlands-83696.herokuapp.com/user`
         fetch(url, {
             method: "POST",
             headers: {
