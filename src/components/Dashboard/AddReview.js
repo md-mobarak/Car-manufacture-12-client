@@ -30,11 +30,11 @@ const AddReview = () => {
                         <textarea
                             class="textarea "
                             {...register("description", { required: true })}
-                            placeholder="Bio">
+                            placeholder="Write Your Comment">
                         </textarea>
                         <input type="number"
                             name='rating'
-                            placeholder="Type here"
+                            placeholder="Rating Up to 5"
                             {...register("rating", { min: 0, max: 5, required: true })}
                             class="input input-bordered w-full max-w-xs" />
 

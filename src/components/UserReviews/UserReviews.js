@@ -12,7 +12,7 @@ const UserReviews = () => {
     }, [reviews])
     return (
         <div className=''>
-            <div className='grid lg:grid-cols-3 grid-cols-1 gap-8 '>
+            <div className='grid lg:grid-cols-3 grid-cols-1 gap-8'>
                 {
                     reviews.map(review => <Review key={review._id} review={review}></Review>)
                 }
