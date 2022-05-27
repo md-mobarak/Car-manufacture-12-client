@@ -1,8 +1,23 @@
 # [Live site Link](https://car-parts-assignment-12.web.app/)
 
- [site](https://github.com/facebook/create-react-app).
+ [site](https://car-parts-assignment-12.web.app/) .
+ # https://car-parts-assignment-12.web.app/
 
-## Usages Thecnology
+## Usages technology
+* Frontend
+* usages react 
+* css framework tailwind
+* tailwind component library daysiUI
+* authentication with firebase
+* react use hook form
+* axios use for fetch
+
+
+
+
+## usages technology backend
+* node.js with express
+* JWT token for user  mark
 
 In the project directory, you can run:
 
